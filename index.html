@@ -221,6 +221,7 @@
         <button class="qty-btn" onclick="update(2,1)">+</button>
       </div>
     </div>
+
     <div class="order-box">
       <h3>Din bestilling</h3>
       <div id="lines"><span class="order-empty">Ingenting valgt ennå</span></div>
@@ -235,7 +236,7 @@
     <img src="Pictures/IMG_8559.jpeg" alt="Kaffekopp">
     <div class="sidebar-note">
       <strong>Slik fungerer det</strong><br>
-      Velg kaffe, trykk «Betal med Vipps» — så åpner Vipps med riktig beløp og beskrivelse ferdig utfylt.
+      Velg kaffe → Trykk på knappen → Skriv inn beløpet i Vipps.
     </div>
   </div>
 </div>
@@ -246,7 +247,7 @@
     { name: 'Kaffe med Melk', price: 4 },
     { name: 'Kaffe med Skum og Sukkerbit', price: 6 }
   ];
-  const VIPPS = '46851449';
+  const VIPPS_PHONE = '46851449';
   const qty = [0, 0, 0];
 
   function update(i, d) {
@@ -258,6 +259,7 @@
   function render() {
     let total = 0;
     let html = '';
+
     MENU.forEach(function(item, i) {
       if (qty[i] > 0) {
         const sub = qty[i] * item.price;
@@ -265,24 +267,19 @@
         html += '<div class="order-line"><span>' + qty[i] + '× ' + item.name + '</span><span>' + sub + ' kr</span></div>';
       }
     });
+
     document.getElementById('lines').innerHTML = html || '<span class="order-empty">Ingenting valgt ennå</span>';
     document.getElementById('total-display').textContent = total + ' kr';
 
     const btn = document.getElementById('pay-btn');
 
     if (total > 0) {
-      const desc = MENU
-        .map(function(item, i) { return qty[i] > 0 ? qty[i] + 'x ' + item.name : ''; })
-        .filter(Boolean).join(', ');
-
-      const amountOre = total * 100;
-      
-      // Endret betalingslenke – nyere format som har bedre sjanse for å fungere
-      btn.href = 'https://vipps.no/payment?phone=' + VIPPS + '&amount=' + amountOre + '&message=' + encodeURIComponent(desc);
-
+      btn.href = `https://vipps.no/?phone=${VIPPS_PHONE}`;
+      btn.textContent = `Betal ${total} kr med Vipps`;
       btn.classList.remove('off');
     } else {
       btn.href = '#';
+      btn.textContent = 'Betal med Vipps';
       btn.classList.add('off');
     }
   }

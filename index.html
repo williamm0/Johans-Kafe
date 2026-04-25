@@ -6,14 +6,12 @@
   <title>Johans Kafé</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: Georgia, 'Times New Roman', serif;
       background: #f4ede0;
       color: #2c1a0e;
       min-height: 100vh;
     }
-
     header {
       background: #2e1200;
       color: #f4ede0;
@@ -21,20 +19,17 @@
       padding: 2.2rem 1rem 1.8rem;
       border-bottom: 4px solid #7d4820;
     }
-
     header h1 {
       font-size: 2.6rem;
       letter-spacing: 3px;
       font-weight: normal;
     }
-
     header p {
       margin-top: 0.4rem;
       font-size: 1rem;
       color: #c9a97a;
       font-style: italic;
     }
-
     .container {
       max-width: 820px;
       margin: 2.5rem auto;
@@ -43,9 +38,7 @@
       gap: 2.2rem;
       align-items: flex-start;
     }
-
     .menu-col { flex: 1; min-width: 0; }
-
     .menu-col h2 {
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -53,7 +46,6 @@
       color: #7d4820;
       margin-bottom: 1rem;
     }
-
     .menu-item {
       background: #fff;
       border-radius: 10px;
@@ -65,25 +57,21 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.07);
       border-left: 4px solid #c9a97a;
     }
-
     .item-name {
       font-size: 1.05rem;
       font-weight: bold;
     }
-
     .item-price {
       font-size: 0.95rem;
       color: #7d4820;
       margin-top: 0.15rem;
     }
-
     .qty-ctrl {
       display: flex;
       align-items: center;
       gap: 0.7rem;
       flex-shrink: 0;
     }
-
     .qty-btn {
       background: #2e1200;
       color: #f4ede0;
@@ -99,16 +87,13 @@
       justify-content: center;
       transition: background 0.15s;
     }
-
     .qty-btn:hover { background: #5c3311; }
-
     .qty-num {
       min-width: 22px;
       text-align: center;
       font-size: 1.15rem;
       font-weight: bold;
     }
-
     .order-box {
       background: #fff;
       border-radius: 10px;
@@ -116,7 +101,6 @@
       margin-top: 1.4rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.07);
     }
-
     .order-box h3 {
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -124,20 +108,17 @@
       color: #7d4820;
       margin-bottom: 0.9rem;
     }
-
     .order-line {
       display: flex;
       justify-content: space-between;
       font-size: 0.95rem;
       margin-bottom: 0.35rem;
     }
-
     .order-empty {
       font-size: 0.9rem;
       color: #a08060;
       font-style: italic;
     }
-
     .order-total {
       display: flex;
       justify-content: space-between;
@@ -147,7 +128,6 @@
       margin-top: 0.7rem;
       padding-top: 0.7rem;
     }
-
     .vipps-btn {
       display: block;
       width: 100%;
@@ -166,15 +146,12 @@
       text-decoration: none;
       transition: background 0.15s;
     }
-
     .vipps-btn:hover:not(.off) { background: #e04a18; }
-
     .vipps-btn.off {
       background: #ccc;
       color: #888;
       cursor: not-allowed;
     }
-
     .sidebar {
       width: 210px;
       flex-shrink: 0;
@@ -182,13 +159,11 @@
       flex-direction: column;
       gap: 1rem;
     }
-
     .sidebar img {
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.13);
     }
-
     .sidebar-note {
       background: #2e1200;
       color: #f4ede0;
@@ -197,9 +172,7 @@
       font-size: 0.92rem;
       line-height: 1.6;
     }
-
     .sidebar-note strong { color: #c9a97a; }
-
     @media (max-width: 620px) {
       .container { flex-direction: column; }
       .sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; }
@@ -208,17 +181,13 @@
   </style>
 </head>
 <body>
-
 <header>
   <h1>Johans Kafé</h1>
   <p>Velg det du vil ha — vi regner ut, du betaler</p>
 </header>
-
 <div class="container">
-
   <div class="menu-col">
     <h2>Meny</h2>
-
     <div class="menu-item">
       <div>
         <div class="item-name">Sterk Kaffe</div>
@@ -230,7 +199,6 @@
         <button class="qty-btn" onclick="update(0,1)">+</button>
       </div>
     </div>
-
     <div class="menu-item">
       <div>
         <div class="item-name">Kaffe med Melk</div>
@@ -242,7 +210,6 @@
         <button class="qty-btn" onclick="update(1,1)">+</button>
       </div>
     </div>
-
     <div class="menu-item">
       <div>
         <div class="item-name">Kaffe med Skum og Sukkerbit</div>
@@ -254,7 +221,6 @@
         <button class="qty-btn" onclick="update(2,1)">+</button>
       </div>
     </div>
-
     <div class="order-box">
       <h3>Din bestilling</h3>
       <div id="lines"><span class="order-empty">Ingenting valgt ennå</span></div>
@@ -263,10 +229,8 @@
         <span id="total-display">0 kr</span>
       </div>
     </div>
-
     <a id="pay-btn" href="#" class="vipps-btn off">Betal med Vipps</a>
   </div>
-
   <div class="sidebar">
     <img src="Pictures/IMG_8559.jpeg" alt="Kaffekopp">
     <div class="sidebar-note">
@@ -274,13 +238,12 @@
       Velg kaffe, trykk «Betal med Vipps» — så åpner Vipps med riktig beløp og beskrivelse ferdig utfylt.
     </div>
   </div>
-
 </div>
 
 <script>
   const MENU = [
-    { name: 'Sterk Kaffe',                 price: 2 },
-    { name: 'Kaffe med Melk',              price: 4 },
+    { name: 'Sterk Kaffe', price: 2 },
+    { name: 'Kaffe med Melk', price: 4 },
     { name: 'Kaffe med Skum og Sukkerbit', price: 6 }
   ];
   const VIPPS = '46851449';
@@ -295,7 +258,6 @@
   function render() {
     let total = 0;
     let html = '';
-
     MENU.forEach(function(item, i) {
       if (qty[i] > 0) {
         const sub = qty[i] * item.price;
@@ -303,16 +265,21 @@
         html += '<div class="order-line"><span>' + qty[i] + '× ' + item.name + '</span><span>' + sub + ' kr</span></div>';
       }
     });
-
     document.getElementById('lines').innerHTML = html || '<span class="order-empty">Ingenting valgt ennå</span>';
     document.getElementById('total-display').textContent = total + ' kr';
 
     const btn = document.getElementById('pay-btn');
+
     if (total > 0) {
       const desc = MENU
         .map(function(item, i) { return qty[i] > 0 ? qty[i] + 'x ' + item.name : ''; })
         .filter(Boolean).join(', ');
-      btn.href = 'vipps://payment?phone=' + VIPPS + '&amount=' + (total * 100) + '&message=' + encodeURIComponent(desc);
+
+      const amountOre = total * 100;
+      
+      // Endret betalingslenke – nyere format som har bedre sjanse for å fungere
+      btn.href = 'https://vipps.no/payment?phone=' + VIPPS + '&amount=' + amountOre + '&message=' + encodeURIComponent(desc);
+
       btn.classList.remove('off');
     } else {
       btn.href = '#';
@@ -320,6 +287,5 @@
     }
   }
 </script>
-
 </body>
 </html>

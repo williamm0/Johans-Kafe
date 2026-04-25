@@ -236,7 +236,7 @@
     <img src="Pictures/IMG_8559.jpeg" alt="Kaffekopp">
     <div class="sidebar-note">
       <strong>Slik fungerer det</strong><br>
-      Velg kaffe → Trykk på knappen → Skriv inn beløpet i Vipps.
+      Velg kaffe → Trykk på knappen → Vipps-appen åpnes (skriv inn beløpet selv).
     </div>
   </div>
 </div>
@@ -274,8 +274,8 @@
     const btn = document.getElementById('pay-btn');
 
     if (total > 0) {
-      // Bedre måte å åpne Vipps på (universal link)
-      btn.href = `https://pay.vipps.no/?phone=${46851449}`;
+      // Beste måte å prøve å åpne Vipps-appen direkte i 2026
+      btn.href = `https://pay.vipps.no/?phone=${VIPPS_PHONE}`;
       btn.textContent = `Betal ${total} kr med Vipps`;
       btn.classList.remove('off');
     } else {

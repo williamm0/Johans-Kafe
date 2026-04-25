@@ -274,7 +274,8 @@
     const btn = document.getElementById('pay-btn');
 
     if (total > 0) {
-      btn.href = `https://vipps.no/?phone=${VIPPS_PHONE}`;
+      // Bedre måte å åpne Vipps på (universal link)
+      btn.href = `https://pay.vipps.no/?phone=${46851449}`;
       btn.textContent = `Betal ${total} kr med Vipps`;
       btn.classList.remove('off');
     } else {
